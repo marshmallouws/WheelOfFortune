@@ -4,65 +4,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:foregroundGravity="left|center_vertical|center"
+    android:foregroundTint="#8E2222"
+    android:foregroundTintMode="src_in"
     tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/spinWheelBtn"
+        android:layout_width="0dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="214dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="444dp"
+        android:text="Spin the wheel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/word"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="56dp"
+        android:layout_width="278dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="99dp"
         android:text="_ _ _ _ _ _   _ _ _ _ _"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinWheelBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/spinWheelBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginEnd="173dp"
-        android:layout_marginBottom="444dp"
-        android:text="Spin the wheel"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextInputLetter"
         android:layout_width="158dp"
         android:layout_height="92dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="248dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="316dp"
+        android:autoText="true"
+        android:digits="abcdefghijklmnopqrstuvwxyz"
         android:ems="10"
         android:inputType="text"
-        android:text="Letter"
-        android:textAlignment="center"
         android:maxLength="1"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guessBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinWheelBtn"
-        app:layout_constraintVertical_bias="1.0"
-        android:digits="abcdefghijklmnopqrstuvwxyz"/>
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/guessBtn"
         android:layout_width="125dp"
         android:layout_height="60dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginBottom="272dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="254dp"
         android:text="Guess"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextInputLetter" />
+        app:layout_constraintStart_toEndOf="@+id/editTextInputLetter"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="93dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextInputLetter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/livesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:text="Lives:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pointsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:text="Points:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/livesTextView" />
+
+    <TextView
+        android:id="@+id/categoryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:text="Category"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
